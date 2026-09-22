@@ -18,8 +18,8 @@
                 extend: {
                     colors: {
                         karsa: {
-                            green: '#1a4731', // Base on logo green
-                            gold: '#b88b4a',  // Base on logo gold
+                            green: '#1a4731',
+                            gold: '#b88b4a',
                             light: '#f5f7f5',
                             dark: '#0f291c',
                         }
@@ -33,37 +33,19 @@
         }
     </script>
     <style>
-        /* Custom Styles for nuances not covered by Tailwind */
         .glass-nav {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
-        
         .hero-pattern {
             background-color: #1a4731;
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b88b4a' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
-
-        .text-gradient {
-            background: linear-gradient(to right, #1a4731, #b88b4a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Image hover effect */
-        .img-hover-zoom {
-            overflow: hidden;
-        }
-        .img-hover-zoom img {
-            transition: transform .5s ease;
-        }
-        .img-hover-zoom:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Portfolio Tabs */
+        .img-hover-zoom { overflow: hidden; }
+        .img-hover-zoom img { transition: transform .5s ease; }
+        .img-hover-zoom:hover img { transform: scale(1.05); }
         .tab-btn.active {
             background-color: #1a4731;
             color: white;
@@ -77,31 +59,26 @@
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
-                <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <!-- UPDATE: Nama file logo disesuaikan dengan yang di-upload ke GitHub -->
-                    <img class="h-12 w-auto object-contain rounded-full bg-white p-1 shadow-sm" src="1786870214058.png" alt="Yayasan KARSA Logo">
-                    <span class="ml-3 font-serif font-bold text-xl text-karsa-green hidden sm:block nav-text">KARSA</span>
+                    <img class="h-12 w-auto object-contain rounded-full bg-white p-1 shadow-sm" src="1786870214058.png" alt="Yayasan KARSA Logo" onerror="this.src='https://placehold.co/100x100/1a4731/ffffff?text=KARSA'">
+                    <span class="ml-3 font-serif font-bold text-xl text-karsa-dark sm:text-karsa-dark hidden sm:block nav-text">KARSA</span>
                 </div>
 
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#tentang" class="text-karsa-dark hover:text-karsa-gold font-medium transition-colors nav-link">Tentang</a>
-                    <a href="#fokus" class="text-karsa-dark hover:text-karsa-gold font-medium transition-colors nav-link">Fokus Kami</a>
-                    <a href="#portofolio" class="text-karsa-dark hover:text-karsa-gold font-medium transition-colors nav-link">Jurnal & Karya</a>
-                    <a href="#kontak" class="bg-karsa-green text-white px-6 py-2 rounded-full hover:bg-karsa-dark hover:shadow-lg transition-all duration-300 font-semibold transform hover:-translate-y-0.5">Dukung Kami</a>
+                    <a href="#tentang" class="text-karsa-dark hover:text-karsa-gold font-medium transition-colors">Tentang</a>
+                    <a href="#fokus" class="text-karsa-dark hover:text-karsa-gold font-medium transition-colors">Fokus Kami</a>
+                    <a href="#portofolio" class="text-karsa-dark hover:text-karsa-gold font-medium transition-colors">Jurnal & Karya</a>
+                    <a href="#kontak" class="bg-karsa-green text-white px-6 py-2 rounded-full hover:bg-karsa-dark hover:shadow-lg transition-all duration-300 font-semibold">Dukung Kami</a>
                 </div>
 
-                <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-karsa-dark hover:text-karsa-green focus:outline-none p-2">
-                        <i class="fas fa-bars text-2xl nav-icon"></i>
+                        <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile Menu Overlay -->
         <div id="mobile-menu" class="hidden md:hidden bg-white absolute top-full left-0 w-full shadow-xl border-t border-gray-100 origin-top transform scale-y-0 transition-transform duration-300 ease-out">
             <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
                 <a href="#tentang" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-karsa-green hover:bg-green-50">Tentang</a>
@@ -114,10 +91,7 @@
 
     <!-- Hero Section -->
     <section id="beranda" class="relative min-h-screen flex items-center justify-center hero-pattern pt-20 overflow-hidden">
-        <!-- Overlay for better text readability -->
         <div class="absolute inset-0 bg-gradient-to-b from-karsa-dark/80 to-karsa-green/90 z-0"></div>
-        
-        <!-- Decorative elements -->
         <div class="absolute top-1/4 left-10 w-64 h-64 bg-karsa-gold rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
         <div class="absolute bottom-1/4 right-10 w-80 h-80 bg-green-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style="animation-delay: 2s;"></div>
 
@@ -128,12 +102,12 @@
                 </span>
             </div>
             
-            <h1 class="gsap-hero-el opacity-0 translate-y-10 font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+            <h1 class="gsap-hero-el opacity-0 translate-y-10 font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
                 Merawat Alam,<br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-karsa-gold to-yellow-200">Menghidupkan Budaya.</span>
             </h1>
             
-            <p class="gsap-hero-el opacity-0 translate-y-10 mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-200 font-light mb-10 leading-relaxed">
+            <p class="gsap-hero-el opacity-0 translate-y-10 mt-6 max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-gray-200 font-light mb-10 leading-relaxed">
                 KARSA hadir sebagai ruang sinergi merajut harmoni antara kelestarian lingkungan, kekayaan tradisi, dan kesejahteraan sosial masyarakat.
             </p>
             
@@ -148,7 +122,6 @@
             </div>
         </div>
 
-        <!-- Scroll Indicator -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
             <a href="#tentang" class="text-white/70 hover:text-white">
                 <i class="fas fa-chevron-down text-2xl"></i>
@@ -160,20 +133,19 @@
     <section id="tentang" class="py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <!-- Text Content -->
                 <div class="gsap-fade-right">
                     <div class="flex items-center gap-4 mb-4">
                         <div class="h-[2px] w-12 bg-karsa-gold"></div>
                         <h3 class="text-karsa-gold font-bold uppercase tracking-widest text-sm">Tentang KARSA</h3>
                     </div>
-                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-karsa-dark mb-6 leading-tight">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-karsa-dark mb-6 leading-tight">
                         Lahir dari <span class="text-karsa-green">Kepedulian</span>, Bergerak untuk <span class="text-karsa-gold">Perubahan</span>.
                     </h2>
-                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                    <p class="text-gray-600 text-base sm:text-lg mb-6 leading-relaxed">
                         Yayasan KARSA (Kemakmuran Kebudayaan Alam Rakyat Semesta) adalah organisasi non-profit yang mendedikasikan diri pada tiga pilar utama kehidupan: Sosial, Kebudayaan, dan Alam.
                     </p>
-                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-                        Kami percaya bahwa kesejahteraan yang sejati tidak bisa dicapai tanpa menjaga keseimbangan alam dan melestarikan akar budaya yang menjadi identitas bangsa. Melalui aksi nyata dan kolaborasi, kami berupaya menciptakan dampak positif yang berkelanjutan.
+                    <p class="text-gray-600 text-base sm:text-lg mb-8 leading-relaxed">
+                        Kami percaya bahwa kesejahteraan yang sejati tidak bisa dicapai tanpa menjaga keseimbangan alam dan melestarikan akar budaya yang menjadi identitas bangsa.
                     </p>
                     
                     <div class="grid grid-cols-2 gap-6 mb-8 border-l-4 border-karsa-green pl-6">
@@ -188,30 +160,14 @@
                     </div>
                 </div>
 
-                <!-- Image/Visual Content -->
                 <div class="relative gsap-fade-left">
-                    <!-- Main Image container -->
                     <div class="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] img-hover-zoom">
                         <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80" alt="Kegiatan Sosial KARSA" class="w-full h-full object-cover">
-                        <!-- Overlay gradient -->
                         <div class="absolute inset-0 bg-gradient-to-t from-karsa-dark/80 via-transparent to-transparent"></div>
                         <div class="absolute bottom-8 left-8 right-8">
                             <p class="text-white font-serif text-xl md:text-2xl font-medium leading-snug">
                                 "Menjaga warisan luhur, merawat bumi, untuk generasi esok."
                             </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Floating Element -->
-                    <div class="absolute -bottom-10 -left-10 bg-white p-6 rounded-2xl shadow-xl max-w-xs hidden md:block">
-                        <div class="flex items-center gap-4">
-                            <div class="w-16 h-16 bg-karsa-green/10 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-seedling text-3xl text-karsa-green"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900">Aksi Berkelanjutan</h4>
-                                <p class="text-sm text-gray-500">Membangun ekosistem yang sehat dan mandiri.</p>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -224,21 +180,21 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 gsap-fade-up">
                 <h3 class="text-karsa-gold font-bold uppercase tracking-widest text-sm mb-3">Tiga Pilar Utama</h3>
-                <h2 class="text-4xl md:text-5xl font-serif font-bold text-karsa-dark mb-6">Fokus Pergerakan Kami</h2>
-                <p class="text-gray-600 text-lg">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-karsa-dark mb-6">Fokus Pergerakan Kami</h2>
+                <p class="text-gray-600 text-base sm:text-lg">
                     Setiap langkah KARSA dipandu oleh komitmen untuk menghadirkan perubahan di tiga area fundamental ini.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Pillar 1: Sosial -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group gsap-fade-up" style="transition-delay: 100ms;">
+                <!-- Pillar 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group gsap-fade-up">
                     <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300">
                         <i class="fas fa-hands-holding-child text-3xl text-blue-600 group-hover:text-white transition-colors"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4 font-serif">Sosial & Kemanusiaan</h3>
                     <p class="text-gray-600 mb-6 leading-relaxed">
-                        Meningkatkan kesejahteraan masyarakat melalui pemberdayaan ekonomi, pendidikan inklusif, dan bantuan kemanusiaan darurat. Kami hadir untuk mengangkat martabat rakyat.
+                        Meningkatkan kesejahteraan masyarakat melalui pemberdayaan ekonomi, pendidikan inklusif, dan bantuan kemanusiaan darurat.
                     </p>
                     <ul class="space-y-3 text-sm text-gray-500 font-medium mb-6">
                         <li class="flex items-center gap-2"><i class="fas fa-check text-karsa-green"></i> Edukasi Masyarakat Desa</li>
@@ -247,14 +203,14 @@
                     </ul>
                 </div>
 
-                <!-- Pillar 2: Kebudayaan -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group gsap-fade-up" style="transition-delay: 200ms;">
+                <!-- Pillar 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group gsap-fade-up">
                     <div class="w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-karsa-gold transition-colors duration-300">
                         <i class="fas fa-mask text-3xl text-karsa-gold group-hover:text-white transition-colors"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4 font-serif">Pelestarian Kebudayaan</h3>
                     <p class="text-gray-600 mb-6 leading-relaxed">
-                        Merawat dan menghidupkan kembali seni, tradisi, dan kearifan lokal. Menjadikan budaya sebagai pondasi jati diri dan sumber inspirasi generasi masa depan.
+                        Merawat dan menghidupkan kembali seni, tradisi, dan kearifan lokal sebagai jati diri bangsa.
                     </p>
                     <ul class="space-y-3 text-sm text-gray-500 font-medium mb-6">
                         <li class="flex items-center gap-2"><i class="fas fa-check text-karsa-gold"></i> Dokumentasi Tradisi Lisan</li>
@@ -263,14 +219,14 @@
                     </ul>
                 </div>
 
-                <!-- Pillar 3: Alam -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group gsap-fade-up" style="transition-delay: 300ms;">
+                <!-- Pillar 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group gsap-fade-up">
                     <div class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-karsa-green transition-colors duration-300">
                         <i class="fas fa-leaf text-3xl text-karsa-green group-hover:text-white transition-colors"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4 font-serif">Konservasi Alam</h3>
                     <p class="text-gray-600 mb-6 leading-relaxed">
-                        Melindungi keanekaragaman hayati dan mempromosikan praktik hidup berkelanjutan. Dari penanaman hutan kembali hingga pengelolaan sampah yang bertanggung jawab.
+                        Melindungi keanekaragaman hayati dan mempromosikan praktik hidup berkelanjutan bagi bumi.
                     </p>
                     <ul class="space-y-3 text-sm text-gray-500 font-medium mb-6">
                         <li class="flex items-center gap-2"><i class="fas fa-check text-karsa-green"></i> Reboisasi Lahan Kritis</li>
@@ -288,31 +244,26 @@
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gsap-fade-up">
                 <div class="max-w-2xl">
                     <h3 class="text-karsa-gold font-bold uppercase tracking-widest text-sm mb-3">Jurnal & Karya</h3>
-                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-karsa-dark mb-4">Rekam Jejak KARSA</h2>
-                    <p class="text-gray-600 text-lg">
-                        Dokumentasi perjalanan, artikel mendalam, dan galeri kegiatan kami. Ruang ini adalah portofolio aksi nyata kami di lapangan.
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-karsa-dark mb-4">Rekam Jejak KARSA</h2>
+                    <p class="text-gray-600 text-base sm:text-lg">
+                        Dokumentasi perjalanan, artikel mendalam, dan galeri kegiatan lapangan kami.
                     </p>
                 </div>
                 
-                <!-- Filter/Tabs -->
                 <div class="mt-6 md:mt-0 flex flex-wrap gap-2">
-                    <button class="tab-btn active px-5 py-2 rounded-full border border-gray-300 text-sm font-medium hover:border-karsa-green hover:text-karsa-green transition-all" data-filter="all">Semua</button>
-                    <button class="tab-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-600 hover:border-karsa-green hover:text-karsa-green transition-all" data-filter="sosial">Sosial</button>
-                    <button class="tab-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-600 hover:border-karsa-green hover:text-karsa-green transition-all" data-filter="budaya">Budaya</button>
-                    <button class="tab-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-600 hover:border-karsa-green hover:text-karsa-green transition-all" data-filter="alam">Alam</button>
+                    <button class="tab-btn active px-5 py-2 rounded-full border border-gray-300 text-sm font-medium transition-all" data-filter="all">Semua</button>
+                    <button class="tab-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-600 transition-all" data-filter="sosial">Sosial</button>
+                    <button class="tab-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-600 transition-all" data-filter="budaya">Budaya</button>
+                    <button class="tab-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-600 transition-all" data-filter="alam">Alam</button>
                 </div>
             </div>
 
-            <!-- Gallery Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
-                
-                <!-- Item 1: Alam (Artikel/Berita) -->
+                <!-- Item 1 -->
                 <div class="gallery-item group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-white border border-gray-100 flex flex-col h-full" data-category="alam">
                     <div class="relative h-60 img-hover-zoom overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=600&q=80" alt="Penanaman Mangrove" class="w-full h-full object-cover">
-                        <div class="absolute top-4 left-4 bg-karsa-green text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                            Alam
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=600&q=80" alt="Mangrove" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-karsa-green text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Alam</div>
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
                         <div class="flex items-center text-xs text-gray-500 mb-3 gap-4">
@@ -320,115 +271,42 @@
                             <span><i class="far fa-user mr-1"></i> Tim Konservasi</span>
                         </div>
                         <h4 class="text-xl font-bold text-gray-900 mb-3 font-serif group-hover:text-karsa-green transition-colors">Aksi Tanam 1000 Mangrove di Pesisir Utara</h4>
-                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                            Langkah nyata memitigasi abrasi pantai sekaligus mengembalikan ekosistem laut tempat udang dan ikan kecil berkembang biak.
-                        </p>
-                        <a href="#" class="mt-auto inline-flex items-center text-karsa-gold font-semibold text-sm hover:text-karsa-dark transition-colors">
-                            Baca Selengkapnya <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                        </a>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">Langkah nyata memitigasi abrasi pantai sekaligus mengembalikan ekosistem laut.</p>
+                        <a href="#" class="mt-auto inline-flex items-center text-karsa-gold font-semibold text-sm hover:text-karsa-dark">Baca Selengkapnya <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
                     </div>
                 </div>
 
-                <!-- Item 2: Budaya (Galeri Foto) -->
+                <!-- Item 2 -->
                 <div class="gallery-item group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-white border border-gray-100 flex flex-col h-full" data-category="budaya">
                     <div class="relative h-60 img-hover-zoom overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1533604100650-6816bc8d169c?auto=format&fit=crop&w=600&q=80" alt="Tari Tradisional" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
-                            <i class="fas fa-search-plus text-4xl text-white"></i>
-                        </div>
-                        <div class="absolute top-4 left-4 bg-karsa-gold text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider z-10">
-                            Budaya
-                        </div>
-                        <div class="absolute bottom-4 right-4 bg-black/60 backdrop-blur-sm text-white text-xs px-2 py-1 rounded flex items-center gap-1 z-10">
-                            <i class="fas fa-image"></i> 12 Foto
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1533604100650-6816bc8d169c?auto=format&fit=crop&w=600&q=80" alt="Budaya" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-karsa-gold text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Budaya</div>
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
-                        <h4 class="text-xl font-bold text-gray-900 mb-3 font-serif group-hover:text-karsa-gold transition-colors">Dokumentasi: Festival Seni Rakyat 2026</h4>
-                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">
-                            Kumpulan momen indah dari perayaan kebudayaan tahunan yang menghadirkan seniman dari berbagai pelosok negeri.
-                        </p>
+                        <div class="flex items-center text-xs text-gray-500 mb-3 gap-4">
+                            <span><i class="far fa-calendar-alt mr-1"></i> 10 Sep 2026</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3 font-serif group-hover:text-karsa-gold transition-colors">Festival Seni Rakyat Nusantara</h4>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">Kumpulan momen perayaan kebudayaan tahunan bersama seniman lokal.</p>
+                        <a href="#" class="mt-auto inline-flex items-center text-karsa-gold font-semibold text-sm hover:text-karsa-dark">Lihat Galeri <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
                     </div>
                 </div>
 
-                <!-- Item 3: Sosial (Video) -->
+                <!-- Item 3 -->
                 <div class="gallery-item group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-white border border-gray-100 flex flex-col h-full" data-category="sosial">
                     <div class="relative h-60 img-hover-zoom overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&q=80" alt="Sekolah Alam" class="w-full h-full object-cover">
-                        <!-- Play Button Overlay -->
-                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
-                            <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-white/50 group-hover:scale-110 transition-transform cursor-pointer">
-                                <i class="fas fa-play text-white text-xl ml-1"></i>
-                            </div>
-                        </div>
-                        <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider z-10">
-                            Sosial
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&q=80" alt="Sosial" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Sosial</div>
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
                         <div class="flex items-center text-xs text-gray-500 mb-3 gap-4">
                             <span><i class="far fa-calendar-alt mr-1"></i> 02 Sep 2026</span>
-                            <span><i class="fas fa-video mr-1"></i> Vlog</span>
                         </div>
                         <h4 class="text-xl font-bold text-gray-900 mb-3 font-serif group-hover:text-blue-600 transition-colors">Membangun Pustaka Mini di Desa Terpencil</h4>
-                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">
-                            Ikuti perjalanan tim relawan kami mengantarkan ratusan buku donasi menembus akses jalan yang sulit.
-                        </p>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">Mengantarkan ratusan buku donasi menembus akses pelosok negeri.</p>
+                        <a href="#" class="mt-auto inline-flex items-center text-karsa-gold font-semibold text-sm hover:text-karsa-dark">Baca Selengkapnya <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
                     </div>
                 </div>
-
-                 <!-- Item 4: Budaya (Artikel) -->
-                 <div class="gallery-item group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-white border border-gray-100 flex flex-col h-full" data-category="budaya">
-                    <div class="relative h-60 img-hover-zoom overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1604871000636-074fa5117945?auto=format&fit=crop&w=600&q=80" alt="Kain Tenun" class="w-full h-full object-cover">
-                        <div class="absolute top-4 left-4 bg-karsa-gold text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                            Budaya
-                        </div>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col">
-                         <div class="flex items-center text-xs text-gray-500 mb-3 gap-4">
-                            <span><i class="far fa-calendar-alt mr-1"></i> 28 Agu 2026</span>
-                        </div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-3 font-serif group-hover:text-karsa-gold transition-colors">Mengurai Makna pada Sehelai Kain Tenun Ikat</h4>
-                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                            Lebih dari sekadar pakaian, motif dalam kain tenun menyimpan cerita luhur tetang filosofi hidup dan doa.
-                        </p>
-                        <a href="#" class="mt-auto inline-flex items-center text-karsa-gold font-semibold text-sm hover:text-karsa-dark transition-colors">
-                            Baca Selengkapnya <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-            
-            <div class="text-center mt-12">
-                <button class="bg-white border-2 border-karsa-dark text-karsa-dark px-8 py-3 rounded-full font-semibold hover:bg-karsa-dark hover:text-white transition-all shadow-sm">
-                    Lihat Lebih Banyak Karya
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action / Support -->
-    <section id="kontak" class="py-20 bg-karsa-green relative overflow-hidden">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
-        
-        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6">
-                Mari Bergerak Bersama KARSA
-            </h2>
-            <p class="text-green-100 text-lg mb-10 max-w-2xl mx-auto">
-                Setiap donasi, kolaborasi, dan penyebaran informasi yang Anda berikan adalah benih harapan untuk bumi dan peradaban yang lebih baik.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <button class="bg-karsa-gold text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-500 hover:shadow-xl hover:shadow-yellow-500/20 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
-                    <i class="fas fa-heart"></i> Donasi Sekarang
-                </button>
-                <button class="bg-white/10 border border-white/30 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-karsa-green transition-all backdrop-blur-sm flex items-center justify-center gap-2">
-                    <i class="fas fa-handshake"></i> Jadi Relawan/Mitra
-                </button>
             </div>
         </div>
     </section>
@@ -437,111 +315,43 @@
     <footer class="bg-karsa-dark text-gray-300 py-16 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                
-                <!-- Brand Info -->
-                <div class="lg:col-span-1">
+                <div>
                     <div class="flex items-center gap-3 mb-6 bg-white p-2 rounded-lg inline-block">
-                         <!-- UPDATE: Nama file logo disesuaikan dengan yang di-upload ke GitHub -->
-                         <img src="1786870214058.png" alt="Yayasan KARSA Logo" class="h-12 w-auto object-contain">
+                         <img src="1786870214058.png" alt="Logo" class="h-10 w-auto object-contain">
                     </div>
                     <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-                        Yayasan Kemakmuran Kebudayaan Alam Rakyat Semesta (KARSA). Berdedikasi untuk mewujudkan keseimbangan antara manusia, budaya, dan alam semesta.
+                        Yayasan Kemakmuran Kebudayaan Alam Rakyat Semesta (KARSA).
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-karsa-green hover:text-white transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
                 </div>
-
-                <!-- Quick Links -->
                 <div>
-                    <h4 class="text-white font-serif font-bold text-lg mb-6">Tautan Cepat</h4>
+                    <h4 class="text-white font-serif font-bold text-lg mb-6">Tautan</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="#beranda" class="hover:text-karsa-gold transition-colors">Beranda</a></li>
-                        <li><a href="#tentang" class="hover:text-karsa-gold transition-colors">Tentang KARSA</a></li>
-                        <li><a href="#fokus" class="hover:text-karsa-gold transition-colors">Program Kami</a></li>
-                        <li><a href="#portofolio" class="hover:text-karsa-gold transition-colors">Jurnal & Berita</a></li>
-                        <li><a href="#" class="hover:text-karsa-gold transition-colors">Laporan Transparansi</a></li>
+                        <li><a href="#beranda" class="hover:text-karsa-gold">Beranda</a></li>
+                        <li><a href="#tentang" class="hover:text-karsa-gold">Tentang Kami</a></li>
+                        <li><a href="#fokus" class="hover:text-karsa-gold">Program</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact Info -->
                 <div class="lg:col-span-2">
-                    <h4 class="text-white font-serif font-bold text-lg mb-6">Hubungi Kami</h4>
-                    <ul class="space-y-4 text-sm">
-                        <li class="flex items-start gap-3">
-                            <i class="fas fa-map-marker-alt mt-1 text-karsa-gold"></i>
-                            <span>Jl. Harmoni Semesta No. 88, Kecamatan Lestari,<br>Kota Budaya, Indonesia 12345</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-envelope text-karsa-gold"></i>
-                            <a href="mailto:halo@yayasankarsa.org" class="hover:text-white transition-colors">halo@yayasankarsa.org</a>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-phone-alt text-karsa-gold"></i>
-                            <a href="tel:+628112345678" class="hover:text-white transition-colors">+62 811-2345-678</a>
-                        </li>
-                    </ul>
+                    <h4 class="text-white font-serif font-bold text-lg mb-6">Kontak</h4>
+                    <p class="text-sm text-gray-400 mb-2">Jl. Harmoni Semesta No. 88, Kota Budaya</p>
+                    <p class="text-sm text-gray-400">Email: halo@yayasankarsa.org</p>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm text-gray-500">
-                    &copy; 2026 Yayasan KARSA. Hak Cipta Dilindungi.
-                </p>
-                <div class="flex gap-4 text-sm text-gray-500">
-                    <a href="#" class="hover:text-white">Kebijakan Privasi</a>
-                    <a href="#" class="hover:text-white">Syarat & Ketentuan</a>
-                </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-sm text-center text-gray-500">
+                &copy; 2026 Yayasan KARSA. Hak Cipta Dilindungi.
             </div>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            
-            // --- Navbar Scroll Effect ---
-            const navbar = document.getElementById('navbar');
-            const navTexts = document.querySelectorAll('.nav-text, .nav-link, .nav-icon');
-            
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('glass-nav', 'shadow-md');
-                    navbar.classList.remove('bg-transparent', 'py-4');
-                    navbar.classList.add('py-2');
-                    
-                    // Darken text on scroll if hero is light (in this case hero is dark, but good practice for glass)
-                    navTexts.forEach(el => {
-                        // el.classList.remove('text-white');
-                        // el.classList.add('text-karsa-dark');
-                    });
-                } else {
-                    navbar.classList.remove('glass-nav', 'shadow-md', 'py-2');
-                    navbar.classList.add('bg-transparent', 'py-4');
-                    
-                     navTexts.forEach(el => {
-                        // el.classList.remove('text-karsa-dark');
-                        // el.classList.add('text-white');
-                    });
-                }
-            });
-
-            // --- Mobile Menu Toggle ---
             const btn = document.getElementById('mobile-menu-btn');
             const menu = document.getElementById('mobile-menu');
             const mobileLinks = document.querySelectorAll('.mobile-link');
 
-            function toggleMenu() {
+            btn.addEventListener('click', () => {
                 menu.classList.toggle('hidden');
                 if (!menu.classList.contains('hidden')) {
-                    // Slight delay to allow display:block to apply before animating scale
                     setTimeout(() => {
                         menu.classList.remove('scale-y-0');
                         menu.classList.add('scale-y-100');
@@ -550,119 +360,45 @@
                     menu.classList.remove('scale-y-100');
                     menu.classList.add('scale-y-0');
                 }
-            }
+            });
 
-            btn.addEventListener('click', toggleMenu);
-
-            // Close mobile menu when clicking a link
             mobileLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     menu.classList.remove('scale-y-100');
                     menu.classList.add('scale-y-0');
-                    setTimeout(() => {
-                        menu.classList.add('hidden');
-                    }, 300); // Match transition duration
+                    setTimeout(() => menu.classList.add('hidden'), 300);
                 });
             });
 
-            // --- Portfolio Filtering ---
             const tabBtns = document.querySelectorAll('.tab-btn');
             const galleryItems = document.querySelectorAll('.gallery-item');
 
             tabBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    tabBtns.forEach(b => {
-                        b.classList.remove('active', 'text-white', 'bg-karsa-green', 'border-karsa-green');
-                        b.classList.add('text-gray-600', 'border-gray-300');
-                    });
-                    
-                    // Add active class to clicked button
-                    btn.classList.add('active', 'text-white', 'bg-karsa-green', 'border-karsa-green');
-                    btn.classList.remove('text-gray-600', 'border-gray-300');
-
+                    tabBtns.forEach(b => b.classList.remove('active', 'text-white', 'bg-karsa-green'));
+                    btn.classList.add('active', 'text-white', 'bg-karsa-green');
                     const filter = btn.getAttribute('data-filter');
 
                     galleryItems.forEach(item => {
-                        // Simple animation using GSAP
                         if (filter === 'all' || item.getAttribute('data-category') === filter) {
                             item.style.display = 'flex';
-                            gsap.to(item, { opacity: 1, scale: 1, duration: 0.4, ease: "power2.out" });
+                            gsap.to(item, { opacity: 1, scale: 1, duration: 0.4 });
                         } else {
-                            gsap.to(item, { opacity: 0, scale: 0.9, duration: 0.3, ease: "power2.in", onComplete: () => {
-                                item.style.display = 'none';
-                            }});
+                            gsap.to(item, { opacity: 0, scale: 0.9, duration: 0.3, onComplete: () => { item.style.display = 'none'; }});
                         }
                     });
                 });
             });
 
-            // --- GSAP Animations ---
             gsap.registerPlugin(ScrollTrigger);
-
-            // Hero Animation
-            gsap.to(".gsap-hero-el", {
-                y: 0,
-                opacity: 1,
-                duration: 1,
-                stagger: 0.2,
-                ease: "power3.out",
-                delay: 0.2
-            });
-
-            // Fade Up Elements
-            gsap.utils.toArray('.gsap-fade-up').forEach(element => {
-                gsap.from(element, {
-                    scrollTrigger: {
-                        trigger: element,
-                        start: "top 85%",
-                        toggleActions: "play none none reverse"
-                    },
-                    y: 50,
-                    opacity: 0,
-                    duration: 0.8,
-                    ease: "power2.out"
-                });
-            });
-
-            // About Section Split Animation
-            gsap.from('.gsap-fade-right', {
-                scrollTrigger: {
-                    trigger: '#tentang',
-                    start: "top 75%",
-                },
-                x: -50,
-                opacity: 0,
-                duration: 1,
-                ease: "power2.out"
-            });
-
-            gsap.from('.gsap-fade-left', {
-                scrollTrigger: {
-                    trigger: '#tentang',
-                    start: "top 75%",
-                },
-                x: 50,
-                opacity: 0,
-                duration: 1,
-                ease: "power2.out",
-                delay: 0.2
-            });
-            
-             // Gallery Items Stagger
-             gsap.from('.gallery-item', {
-                scrollTrigger: {
-                    trigger: '#gallery-grid',
-                    start: "top 80%",
-                },
-                y: 30,
-                opacity: 0,
-                duration: 0.6,
-                stagger: 0.15,
-                ease: "power2.out"
-            });
+            gsap.to(".gsap-hero-el", { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power3.out", delay: 0.2 });
         });
     </script>
 </body>
 </html>
+```
+
+*Pastikan juga file `1000225579.png` sudah berhasil diunggah dan tersimpan (di-commit) ke repositori GitHub Anda ya.* 
+
+Setelah selesai *commit* file HTML ini, tunggu 1-2 menit lalu _refresh_ halamannya.
 ```
